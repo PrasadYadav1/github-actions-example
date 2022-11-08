@@ -39,7 +39,14 @@ jobs:
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }} 
         known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-    - name: Adding Known Hosts
-      run: ssh-keyscan -H 103.242.116.207 >> ~/.ssh/known_hosts
-    - name: Deploy with rsync
-      run: docker pull prasadkarthikeyan/demo-app
+    - name: multiple command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+            ssh-keyscan -H 103.242.116.207 >> ~/.ssh/known_hosts
+            docker pull docker.io/prasadkarthikeyan/demo-app
+            docker run -d -p 8080:8080 prasadkarthikeyan/demo-app
