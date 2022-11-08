@@ -40,6 +40,6 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }} 
         known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
     - name: Adding Known Hosts
-      run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      run: ssh-keyscan -H 103.242.116.207 >> ~/.ssh/known_hosts
     - name: Deploy with rsync
       run: docker pull prasadkarthikeyan/demo-app
