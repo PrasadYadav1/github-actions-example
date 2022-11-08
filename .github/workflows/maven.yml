@@ -39,4 +39,4 @@ jobs:
       with:
         hosts: 'technoidentity@103.242.116.207'
         privateKey: ${{ secrets.PUBLIC_KEY }}
-        command: docker pull
+        command: docker pull prasadkarthikeyan/demo-app
