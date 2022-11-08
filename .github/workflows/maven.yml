@@ -39,9 +39,8 @@ jobs:
       with:
         hosts: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        privateKey: ${{ secrets.PUBLIC_KEY }}
+        key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
             whoami
             ls -al
-            docker pull prasadkarthikeyan/demo-app
