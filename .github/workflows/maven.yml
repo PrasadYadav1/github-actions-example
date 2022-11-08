@@ -34,9 +34,4 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}   
-   - name: Execute SSH commmands on remote server
-     uses: JimCronqvist/action-ssh@master
-     with:
-       hosts: 'technoidentity@103.242.116.207'
-       privateKey: ${{ secrets.PUBLIC_KEY }}
-          command: ls -lah
+  
