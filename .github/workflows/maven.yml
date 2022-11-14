@@ -47,6 +47,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-            ssh-keyscan -H 103.242.116.207 >> ~/.ssh/known_hosts
             docker pull docker.io/prasadkarthikeyan/demo-app
-            docker run -d -p 8080:8080 prasadkarthikeyan/demo-app
+            docker run -d -p 8080:8080 --name mycontainer prasadkarthikeyan/demo-app
