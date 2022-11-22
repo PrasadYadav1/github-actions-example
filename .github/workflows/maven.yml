@@ -37,14 +37,14 @@ jobs:
     - name: Install SSH Key
       uses: shimataro/ssh-key-action@v2
       with:
-        key: ${{ secrets.PRIVATE_KEY }} 
+        key: ${{ secrets.SSH_PRIVATE_KEY }} 
         known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
     - name: multiple command
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PRIVATE_KEY }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: |
             docker pull docker.io/prasadkarthikeyan/demo-app
